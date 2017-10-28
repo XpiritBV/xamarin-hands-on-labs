@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quotes.QuoteDetailPage" xmlns:ef="clr-namespace:Quotes.Effects">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="EditQuote" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Padding="20">
+            <!-- the grid is here so we can put elements behind other elements (needed for UWP shadow effect) -->
+            <Grid VerticalOptions="FillAndExpand">
+                <Label Text="{Binding QuoteText}" FontAttributes="Italic" VerticalOptions="FillAndExpand" FontSize="Large">
+                    <Label.Effects>
+                        <ef:ShadowEffect Color="Blue" DistanceX="2" DistanceY="2" Radius="10" />
+                    </Label.Effects>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                                        Tapped="SayQuote"
+                                        NumberOfTapsRequired="2" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <Label Text="{Binding Author}" FontAttributes="Bold" FontSize="Medium" TextColor="DarkSlateGray" HorizontalTextAlignment="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

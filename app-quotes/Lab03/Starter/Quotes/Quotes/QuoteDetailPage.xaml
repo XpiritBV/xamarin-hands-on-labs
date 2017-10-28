@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Quotes.QuoteDetailPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Clicked="EditQuote" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Padding="20">
+            <Label Text="{Binding QuoteText}" FontAttributes="Italic" VerticalOptions="FillAndExpand" FontSize="Large"></Label>
+            <Label Text="{Binding Author}" FontAttributes="Bold" FontSize="Medium" TextColor="DarkSlateGray" HorizontalTextAlignment="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
