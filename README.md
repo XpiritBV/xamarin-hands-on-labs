@@ -11,4 +11,4 @@ Get started via [Lab 1](./app-quotes/Lab01/readme.md)
 ## app-conquerthenetwork
 Lab materials for the Resilient Connected Client chapter.
 
-Get started via [Conquer the Network](./app-conquerthenetwork/readme.md)
+Get started via [Conquer the Network](./app-conquerthenetwork)
