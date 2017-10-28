@@ -99,3 +99,5 @@ Let's add a little bit more behavior to this app. When you click an item in the 
 In our next labs, we're going to add more behavior to this app.
 
 This completes Lab 1. Well done!
+
+Next up: [Lab 2](../Lab02/readme.md)
