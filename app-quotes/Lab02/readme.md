@@ -100,3 +100,5 @@ Good luck! :)
 ![Screenshot delete](images/lab0204.gif)
 
 This completes Lab 2. Well done!
+
+Next up: [Lab 3](../Lab03/readme.md)
