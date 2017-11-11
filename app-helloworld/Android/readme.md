@@ -74,7 +74,7 @@ button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); 
 
 Run the app and click on the button to see how it works.
 
-![Screenshot 1](./images/android05.png) ![Screenshot 2](./images/android06.png)
+![Screenshot 1](./images/android05.png)
 
 ### Adding a list
 We are going to add a list to this application. Open the `Main.axml` layout and drag a `ListView` from the **Toolbox** to the surface just below the button.
@@ -214,7 +214,7 @@ This method creates a new `Intent`, specifying the type of the newly added `City
 
 `StartActivity` launches the activity, using the intent we just created. Run the app to see it work:
 
-![Click List](./images/android09.png) ![Detail View](./images/android10.png)
+![Detail View](./images/android09.png)
 
 # Congratulations!
 You've built your first Xamarin.Android app.
