@@ -4,7 +4,7 @@
 - Build your first app with Xamarin.Android
 
 ## Instructions
-Create a new Android project in Visual Studio 2017: `File > New Project > Android > Blank App (Android)` or Visual Studio for Mac: `File > New Solution > Android > Blank App (Android)`.
+Create a new Android project in Visual Studio 2017: `File > New Project > Android > Blank App (Android)` or in Visual Studio for Mac: `File > New Solution > Android > Blank Android App`.
 
 ![New Android project](./images/android01.png)
 
