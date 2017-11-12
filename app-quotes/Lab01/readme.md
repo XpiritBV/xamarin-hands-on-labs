@@ -98,6 +98,31 @@ Let's add a little bit more behavior to this app. When you click an item in the 
 
 In our next labs, we're going to add more behavior to this app.
 
+### Exercise 4. Enable XAML Compilation
+In this exercise, we will explore the different options for XAML compilation.
+
+## Instructions
+1. Enable XAML Compilation for the entire shared project named `Quotes`. We do this by adding an assembly level attribute. Usually, this is done in the file named `AssemblyInfo.cs` (under `Properties`):
+
+```csharp
+[assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
+```
+2. Open one of the pages and "sabotage" the XAML, e.g. by miss-spelling an attribute name or removing a closing XML tag.
+3. Compile the project and notice that the erros introduced in the broken XAML page show up in the **Build Errors** list.
+4. Undo the changes to restore the XAML page back to a working state.
+
+We can also enable or disable XAML compilation on a per page level.
+
+5. Open the `C#` code behind of one of the pages. Add an attribute above the `class` declaration:
+
+```csharp
+[Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Skip)]
+```
+
+Notice that this is **not** an `assembly` level attribute, so it only applies to this particular page.
+
+6. Break the XAML for this page again as in step 2 and notice that no build errors show up for this page. These errors will now show up at runtime, in essence crashing the app due to invalid XAML.
+
 This completes Lab 1. Well done!
 
 Next up: [Lab 2](../Lab02/readme.md)
