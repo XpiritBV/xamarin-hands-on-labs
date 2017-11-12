@@ -53,7 +53,7 @@ public override UIWindow Window
 }
 ```
 
-And we comment out the method: `FinishLaunching`. Now go to the `info.plist` file and select our storyboard file as the startup. This will now wire up the storyboard as the main UI.
+And we **comment out** the method: `FinishLaunching`. Now go to the `info.plist` file and select our storyboard file as the startup. This will now wire up the storyboard as the main UI.
 
 ![Storyboard](./images/ios10.png)
 
@@ -77,6 +77,8 @@ Now select the button again and also give it a name:
 DismissModalViewController(true);
  ```
 
+Run the application and see you can now navigate between the two windows.
+
 ## Exercise 2: TableViewController
 ### Instructions
 
@@ -89,9 +91,11 @@ Add a new storyboard to the project:
 
 ![Add storyboard](./images/ios22.png)
 
-First now delete the first `ViewController` we get, because we want to create a master detail. Therefore, we need a Navigation Controller instead of the default `ViewController`.
+When you get a message to trust the template, click on the trust button, so the template can be used.
+![trust](./images/ios22a.png)
 
-After deleting the `ViewController`, drag from the toolbox a new `NavigationViewController`. The storyboard looks like follows when done:
+
+ Drag from the toolbox a new `Navigation Controller`. The storyboard looks like follows when done:
 
 ![Add navigation controller](./images/ios23.png)
 
@@ -99,13 +103,11 @@ Make the same changes in the `AppDelegate` and the `info.plist` files so we can 
 
 Test the project in the simulator and see if it runs. 
 
-Now replace the `Root View Controller` with a `Table View Controller`. Drag your mouse with `CTRL`/`Command` pressed and release on the `Table View Controller`. Then select the relationship `Root`. Now you can delete the old `Root View Controller`. The result looks like this:
-
-![Add navigation controller](./images/ios24.png)
-
-We now have the table view controller, so next is some code so we can fill the table with some data.
+By default we got as the startup screen the table view controller, so next is some code so we can fill the table with some data.
 
 Select the `Table View Controller` and now go to the class properties and give it the name `CitiesTableViewController`, so we get a code behind class where we can code the initialization of the table.
+
+![CityTableViewController](./images/ios23a.png)
 
 Now add a new class to the project called `CitiesTableViewSource`. Inherit this class from a `UITableViewSource`. Next implement the abstract interface:
 
