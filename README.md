@@ -14,6 +14,53 @@ Get started via [Hello iOS](./app-helloworld/iOS/readme.md) or [Hello Android](.
 Get started via [Lab 1](./app-quotes/Lab01/readme.md)
 
 ## app-conquerthenetwork
-Lab materials for the Resilient Connected Client chapter.
+Lab materials and prerecorded presentation for the Resilient Connected Client chapter.
 
 Get started via [Conquer the Network](./app-conquerthenetwork)
+
+## Extra links, tips & tricks
+### Async & Await
+`Task` based programming with `async` & `await` is very prominent in mobile apps, since we need to be careful about not blocking the UI thread, which is responsible for drawing the screen and animations like scrolling. Any blocking operation, such as CPU intensive calculations or I/O (file or network) should be offloaded to background threads. `Async` & `await` has become very popular for doing this.
+
+However! This can become quite tricky pretty fast. Here is some interesting background material to read up on:
+
+- [Await, and UI, and deadlocks! Oh my!](https://blogs.msdn.microsoft.com/pfxteam/2011/01/13/await-and-ui-and-deadlocks-oh-my/) explains some of the pitfalls in using `async` & `await` in UI applications
+- [Stephen Cleary's blog](http://blog.stephencleary.com) has excellent material on `async` & `await`; articles that are especially relevant to mobile are:
+- His [A Tour of Task series](http://blog.stephencleary.com/2014/04/a-tour-of-task-part-0-overview.html)
+- His [MSDN articles about async in MVVM](http://blog.stephencleary.com/2014/04/announcement-msdn-async-mvvm-articles.html)
+- His [Task.Run Etiquette series](http://blog.stephencleary.com/2013/10/taskrun-etiquette-and-proper-usage.html)
+- His [AsyncTime video series](https://vimeo.com/ondemand/asynctime)
+- The creators of [NServiceBus](https://particular.net/nservicebus) have an interesting webinar on [Async/Await Best Practices](https://particular.net/webinars/async-await-best-practices) which is worth watching
+- Or read up on their article about [Async/Await tips and tricks](https://particular.net/blog/async-await-tips-and-tricks)
+- [Async and Await, All the Things Your Mother Never Told You](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Async-and-Await-All-the-Things-Your-Mother-Never-Told-You), a presentation by James Clancy from Xamarin
+
+### Debug with the Xamarin Android Player from Visual Studio in VMWare or Parallels
+This [article by James Montemagno](https://montemagno.com/debug-with-the-xamarin-android-player-from-visual/) describes how you can setup debugging with a remote Android emulator running on your Mac, while working from Visual Studio in a virtual Windows image.
+
+### Forms Community Toolkit
+The [Forms Community Toolkit](https://github.com/FormsCommunityToolkit/FormsCommunityToolkit) is a community led open source project which contains many useful building blocks for `Xamarin.Forms` applications, such as prebuilt `Effect`s, `Converter`s and `Behavior`s. They are all available as Nuget packages.
+
+### Secure storage
+Here are some links to look at when it comes to storing secrets on your device:
+
+- [SQLCipher](https://www.zetetic.net/sqlcipher/) is a popular library that works on top of the SQLite database, which is available out-of-the-box on iOS and Android. Zetetic offers a [paid component for SQLCipher in Xamarin](https://www.zetetic.net/sqlcipher/sqlcipher-for-xamarin/). It encrypts the database using strong encryption algorithms.
+- The `Xamarin.Auth` library supports secure storage of credentials. It is described in [this article](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/general/store-credentials/). Under the hood, it uses the [Android KeyStore](https://developer.android.com/training/articles/keystore.html) and [iOS Keychain](https://developer.xamarin.com/samples/monotouch/Keychain/) API's. When it comes to storing private data, it pays to investigate the appropriate API's and storage locations in each platform before rolling your own solution. See [this guide for iOS](https://developer.xamarin.com/guides/ios/application_fundamentals/security-privacy-enhancements/).
+
+Two relevant presentations on the topic of security:
+
+- [Is Your App Secure](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Is-Your-App-Secure) by Kerry Lothrop
+- [Addressing the OWASP Mobile Security Threats Using Xamarin](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Addressing-the-OWASP-Mobile-Security-Threats-Using-Xamarin)
+
+### Performance
+With `Xamarin.Forms`, questions about performance often pop up. As your UI becomes more complex, there are certainly pitfalls in `Xamarin.Forms` when it comes to performance. Some resources that are worth checking out:
+
+- [Optimizing App Performance with Xamarin.Forms](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Optimizing-App-Performance-with-XamarinForms), a presentation by Jason Smith from Xamarin.
+- [Improving Xamarin.Forms Startup Performance](https://xamarinhelp.com/improving-xamarin-forms-startup-performance/)
+- [ListView Performance](https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/performance/)
+- A [breakdown of the improvements](https://blog.xamarin.com/glimpse-future-xamarin-forms-3-0/) we can expect in the upcoming Xamarin.Forms 3.0 release
+
+### ESRI in Xamarin apps
+Some material about using ESRI ArcGIS mapping components in Xamarin apps:
+
+- [Developer: ArcGIS Runtime SDK for Xamarin: An Introduction](https://www.youtube.com/watch?v=IDPnUZgAK5w)
+- [ArcGIS Runtime SDK for .NET product page](https://developers.arcgis.com/net/)
