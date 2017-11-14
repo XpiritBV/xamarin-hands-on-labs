@@ -77,8 +77,8 @@ Good luck! :)
     <TextCell ...>
         <TextCell.ContextActions>
             <MenuItem Clicked="OnDelete"
-                CommandParameter="{Binding .}" 
-                Text="Delete" 
+                CommandParameter="{Binding .}"
+                Text="Delete"
                 IsDestructive="True" />
         </TextCell.ContextActions>
     </TextCell>

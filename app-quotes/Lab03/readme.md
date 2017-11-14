@@ -375,7 +375,7 @@ For each of the platforms you want to explore, perform the steps below.
                 else
                 {
     #pragma warning disable 0618
-                    var res = speech.Speak(text, QueueMode.Flush, null
+                    var res = speech.Speak(text, QueueMode.Flush, null);
     #pragma warning restore 0618
                 }
             }

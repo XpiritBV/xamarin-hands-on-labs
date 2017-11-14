@@ -92,8 +92,8 @@ public class Data
     {
         Cities = new List<string> {"Las Vegas", "San Francisco", "New York"};
     }
- 
-    public List<string> Cities { get; private set; } 
+
+    public List<string> Cities { get; private set; }
 }
 ```
 
@@ -106,23 +106,23 @@ private Data _data = new Data();
 protected override void OnCreate(Bundle bundle)
 {
     base.OnCreate(bundle);
- 
+
     // Set our view from the "main" layout resource
     SetContentView(Resource.Layout.Main);
- 
+
     // Get our button from the layout resource,
     // and attach an event to it
     Button button = FindViewById<Button>(Resource.Id.button1);
- 
+
     var listView = FindViewById<ListView>(Resource.Id.listView1);
 
     button.Click += delegate
     {
         var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1);
- 
+
         adapter.AddAll(_data.Cities);
         listView.Adapter = adapter;
-    }; 
+    };
 }
 ```
 
@@ -167,17 +167,16 @@ public class CityActivity : Activity
     protected override void OnCreate(Bundle bundle)
     {
         base.OnCreate(bundle);
- 
+
         // Bind a visual layout to this activity
         SetContentView(Resource.Layout.CityView);
- 
+
         var text = FindViewById<TextView>(Resource.Id.textView1);
- 
+
         // Get the city name that was passed to this activity in the Extras
         var city = Intent.Extras.Get("city").ToString();
-        
+
         text.Text = city;
- 
     }
 }
 ```
@@ -205,7 +204,7 @@ private void ListViewOnItemClick(object sender, AdapterView.ItemClickEventArgs i
 {
     var intent = new Intent(this, typeof(CityActivity));
     intent.PutExtra("city", _data.Cities[itemClickEventArgs.Position]);
- 
+
     StartActivity(intent);
 }
 ```
