@@ -29,6 +29,7 @@ However! This can become quite tricky pretty fast. Here is some interesting back
 - His [A Tour of Task series](http://blog.stephencleary.com/2014/04/a-tour-of-task-part-0-overview.html)
 - His [MSDN articles about async in MVVM](http://blog.stephencleary.com/2014/04/announcement-msdn-async-mvvm-articles.html)
 - His [Task.Run Etiquette series](http://blog.stephencleary.com/2013/10/taskrun-etiquette-and-proper-usage.html)
+- His [Async OOP series](https://blog.stephencleary.com/2013/01/async-oop-0-introduction.html)
 - His [AsyncTime video series](https://vimeo.com/ondemand/asynctime)
 - The creators of [NServiceBus](https://particular.net/nservicebus) have an interesting webinar on [Async/Await Best Practices](https://particular.net/webinars/async-await-best-practices) which is worth watching
 - Or read up on their article about [Async/Await tips and tricks](https://particular.net/blog/async-await-tips-and-tricks)
