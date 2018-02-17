@@ -42,7 +42,7 @@ We want our `MainPage` to look like this (iOS screenshot):
     <ListView ItemsSource="{Binding Quotes}">
         <ListView.ItemTemplate>
             <DataTemlate>
-                <TextCell Text="{Binding QuoteText}" Detail="{Binding Author}">
+                <TextCell Text="{Binding QuoteText}" Detail="{Binding Author}" />
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
