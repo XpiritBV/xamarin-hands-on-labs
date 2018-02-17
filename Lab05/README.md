@@ -1,5 +1,7 @@
 # Lab05: Conquer the Network
 ## Optional lab
+**Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
+
 Download or clone the GitHub repo at [roycornelissen/ConquerTheNetwork](https://www.github.com/roycornelissen/ConquerTheNetwork)
 
 Watch [Roy's presentation](https://www.youtube.com/watch?v=b0X3f8_xC98) in this video:

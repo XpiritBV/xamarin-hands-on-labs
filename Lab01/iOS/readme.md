@@ -1,4 +1,5 @@
 # Hello iOS
+**Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
 
 ## Objectives
 - Build your first app with Xamarin.Android

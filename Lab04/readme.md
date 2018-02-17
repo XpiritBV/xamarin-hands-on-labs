@@ -1,6 +1,8 @@
 # Lab04: Tapping into native features
 In this lab, we will spice up our app a little bit by tapping into native features and rendering. For this, we will explore a couple of ways in which Xamarin.Forms helps us break through the abstractions that it offers.
 
+**Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
+
 ## Objectives
 - Tweak the platform themes to customize look and feel
 - Add an effect to customize the quote label

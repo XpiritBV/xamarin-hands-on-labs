@@ -1,5 +1,8 @@
 # Lab03: Editing capabilities for Quotes
 In this lab, we're going to add capabilities for manipulating the list quotes or adding new quotes. You will explore how you can tap into some of the built in features of Xamarin.Forms `ContentPage` and `ListView` to facilitate this.
+
+**Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
+
 ## Objectives
 - Create a page for adding new quotes
 - Reuse this page for editing existing quotes
