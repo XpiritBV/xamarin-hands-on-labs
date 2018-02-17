@@ -3,7 +3,7 @@ In this lab, you will create your first Xamarin.Forms application, named "Quotes
 
 The starter solution for this app already contains some building blocks for providing the quotes to your UI and saving them to disk.
 
-**Prerequisites**: please make sure you have installed all necessary software. [Instructions](../../README.md#Instructions).
+**Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
 
 ## Objectives
 - Create a new Xamarin.Forms application that displays famous quotes
