@@ -1,7 +1,9 @@
-# Lab 1: Creating a Xamamrin.Forms app
+# Lab 1: Creating a Xamarin.Forms app
 In this lab, you will create your first Xamarin.Forms application, named "Quotes". The app displays famous quotes. In later labs, you will add more features and behaviors to this app, such as a datail view, some nice effects and even a speech engine.
 
 The starter solution for this app already contains some building blocks for providing the quotes to your UI and saving them to disk.
+
+**Prerequisites**: please make sure you have installed all necessary software. [Instructions](../../README.md#Instructions).
 
 ## Objectives
 - Create a new Xamarin.Forms application that displays famous quotes
