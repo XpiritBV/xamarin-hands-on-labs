@@ -5,15 +5,15 @@ _Before you get started with a lab, make sure you update all Nuget packages in t
 
 Contents:
 
-## Lab 01: app-helloworld
+## Lab 01: "Hello World"
 Labs that let you create a new Xamarin.iOS or Xamarin.Android app from scratch, to get familiar with how Xamarin works.
 
-Get started via [Hello iOS](./app-helloworld/iOS/readme.md) or [Hello Android](./app-helloworld/Android/readme.md).
+Get started via [Hello iOS](./Lab01/iOS/readme.md) or [Hello Android](./Lab01/Android/readme.md).
 
-## Lab 02, 03, 04: app-quotes
+## Lab 02, 03, 04: "Quotes"
 3 Labs that lets you get familiar with Xamarin.Forms, adding behavior to your apps and adding native features to your apps.
 
-Get started via [Lab 02](./app-quotes/Lab02/readme.md)
+Get started via [Lab 02](./Lab02/readme.md)
 
 ## Lab 05: app-conquerthenetwork
 Lab materials and prerecorded presentation for the Resilient Connected Client chapter.

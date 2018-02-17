@@ -1,4 +1,4 @@
-# Lab 3: Tapping into native features
+# Lab04: Tapping into native features
 In this lab, we will spice up our app a little bit by tapping into native features and rendering. For this, we will explore a couple of ways in which Xamarin.Forms helps us break through the abstractions that it offers.
 
 ## Objectives
@@ -434,4 +434,4 @@ In the previous exercise, we've explored how you can use abstraction via an inte
     ```
 3. Run the app. The Text-To-Speech feature should still work. Only now you can delete all the custom code we've created in the previous exercise :)
 
-This completes Lab 3. Well done!
+This completes Lab04. Well done!

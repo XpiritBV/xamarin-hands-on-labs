@@ -1,4 +1,5 @@
-# Conquer the Network
+# Lab05: Conquer the Network
+## Optional lab
 Download or clone the GitHub repo at [roycornelissen/ConquerTheNetwork](https://www.github.com/roycornelissen/ConquerTheNetwork)
 
 Watch [Roy's presentation](https://www.youtube.com/watch?v=b0X3f8_xC98) in this video:

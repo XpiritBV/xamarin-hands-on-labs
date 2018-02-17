@@ -1,4 +1,4 @@
-# Lab 1: Creating a Xamarin.Forms app
+# Lab02: Creating a Xamarin.Forms app
 In this lab, you will create your first Xamarin.Forms application, named "Quotes". The app displays famous quotes. In later labs, you will add more features and behaviors to this app, such as a datail view, some nice effects and even a speech engine.
 
 The starter solution for this app already contains some building blocks for providing the quotes to your UI and saving them to disk.
@@ -125,6 +125,6 @@ Notice that this is **not** an `assembly` level attribute, so it only applies to
 
 6. Break the XAML for this page again as in step 2 and notice that no build errors show up for this page. These errors will now show up at runtime, in essence crashing the app due to invalid XAML.
 
-This completes Lab 1. Well done!
+This completes Lab02. Well done!
 
-Next up: [Lab 2](../Lab02/readme.md)
+Next up: [Lab03](../Lab03/readme.md)
