@@ -43,6 +43,9 @@ This may be caused by tools not being installed or configured properly. Check th
 - In the toolbar, change _AnyCPU_ to _x86_; try debugging again
 - In the Project Properties of your Android project, switch off _Optimize Code_ (under the _Build_ tab); rebuild the project and try debugging again
 
+### More troubleshooting
+You can find more troubleshooting tips on the [Xamarin University website](https://university.xamarin.com/resources/troubleshooting).
+
 ## Extra links, tips & tricks
 ### Async & Await
 `Task` based programming with `async` & `await` is very prominent in mobile apps, since we need to be careful about not blocking the UI thread, which is responsible for drawing the screen and animations like scrolling. Any blocking operation, such as CPU intensive calculations or I/O (file or network) should be offloaded to background threads. `Async` & `await` has become very popular for doing this.
