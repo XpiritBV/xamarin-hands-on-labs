@@ -21,11 +21,13 @@ Lab materials and prerecorded presentation for the Resilient Connected Client ch
 Get started via [Conquer the Network](./app-conquerthenetwork)
 
 # [Getting started](#Instructions)
-Install all necessary software on your Windows PC or MacBook. In our experience, the [Xamarin University Setup Guides](https://university.xamarin.com/content/setupmenu) provide a very good and comprehensive set of instructions for getting ready for the Hands On Labs.
+Install all necessary software on your Windows PC or MacBook _before coming to the workshop_. The installation packages for Visual Studio and Xamarin are quite big so we strongly recommend installing them at home or at the office instead of using conference Wifi. In our experience, the [Xamarin University Setup Guides](https://university.xamarin.com/content/setupmenu) provide a very good and comprehensive set of instructions for getting ready for the Hands On Labs.
 
-**Additional steps:**
+## Additional steps
 - Our samples use the Android Support Library v7, which require Android SDK API 26. Make sure you have this installed. From Visual Studio, go to _Tools > Android > SDK Manager_ and make sure **Android 8.0.0 (API 26)** > **SDK Platform** is installed.
 - To increase speed of your Android emulator, the [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) is a good option; alternatively, installing the Hardware Accellerated Execution Manager (HAXM) enabled emulator from Google will also help: [HAXM driver](https://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager-intel-haxm)
+
+Additionally, please clone this repo to your development laptop so you can follow along with our labs.
 
 ## Known issues / Troubleshooting
 Here are some known issues we ran into with students during previous runs of our Hands On Labs:
