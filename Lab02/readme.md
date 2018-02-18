@@ -95,7 +95,7 @@ Let's add a little bit more behavior to this app. When you click an item in the 
     }
     ```
     - Notice that this event handler receives a `SelectedItemChangedEventArgs` parameter that gives you the item that the user clicked/touched in the `ListView`.
-    - Notice also that the method is marked `async` because it `await`s the call to `Navigation.PushAsync(...)`. The navigation framework is `async` and it is good practice to always `await` these methods.
+    - Notice also that the method is marked `async` because it `await`s the call to `Navigation.PushAsync(...)`. The navigation framework is `async` and it is good practice to always `await` these methods. _For more info, see the [tips on using `async` and `await`](https://github.com/XpiritBV/xamarin-hands-on-labs#async--await)_.
 8. Run the application. Notice that when you click an item in the list, the app navigates to the detail page.
 
 In our next labs, we're going to add more behavior to this app.

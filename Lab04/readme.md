@@ -419,7 +419,7 @@ In the previous exercise, we've explored how you can use abstraction via an inte
 1. Install the `Xam.Plugins.TextToSpeech` plugin in all four projects.
     - You'll need the plugin in the shared `Quotes` project to get access to the abstract interface from shared code.
     - Adding the `Xam.Plugins.TextToSpeech` to each platform project will make sure that the platform specific libraries containing the OS specific implementation are installed.
-2. Change the `SayQuote` method in the `QuoteManager` class to use the `CrossTextToSpeech.Current.Speak(...)` method. Note that this method is `async`, so it should be `await`ed. Therefore, we will also make `SayQuote` return a `Task` to make sure we are `async` all the way. It should look like this:
+2. Change the `SayQuote` method in the `QuoteManager` class to use the `CrossTextToSpeech.Current.Speak(...)` method. Note that this method is `async`, so it should be `await`ed. Therefore, we will also make `SayQuote` return a `Task` to make sure we are `async` all the way. _For more info, see the [tips on using `async` and `await`](https://github.com/XpiritBV/xamarin-hands-on-labs#async--await)_. It should look like this:
     ```csharp
     public async Task SayQuote(Quote quote)
     {
