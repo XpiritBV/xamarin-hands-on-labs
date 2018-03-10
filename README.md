@@ -43,6 +43,13 @@ This may be caused by tools not being installed or configured properly. Check th
 - In the toolbar, change _AnyCPU_ to _x86_; try debugging again
 - In the Project Properties of your Android project, switch off _Optimize Code_ (under the _Build_ tab); rebuild the project and try debugging again
 
+### Cannot connect to Mac from Visual Studio 2017
+If you cannot connect to your Mac build host because of the following error:
+
+    One or more Xcode tools were not installed successfully. Failed tools: XcodeExtensionSupport.pkg, MobileDevice.pkg. Even if you can continue working with iOS apps, we strongly recommend you to manually open Xcode on ... and install them if asked.
+
+Refer to [this article](https://developercommunity.visualstudio.com/content/problem/209704/vs-156-xcode-tools-installation-fails.html?childToView=211204#comment-211204) for a solution.
+
 ### More troubleshooting
 You can find more troubleshooting tips on the [Xamarin University website](https://university.xamarin.com/resources/troubleshooting).
 
