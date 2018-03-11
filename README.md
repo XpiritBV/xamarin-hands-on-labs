@@ -1,8 +1,6 @@
 # xamarin-hands-on-labs
 Labs and samples for the Xamarin Hands-On-Labs workshop.
 
-_Before you get started with a lab, make sure you update all Nuget packages in the solution._
-
 Contents:
 
 ## Lab 01: "Hello World"
