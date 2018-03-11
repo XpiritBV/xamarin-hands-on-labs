@@ -16,7 +16,7 @@ Get started via [Lab 02](./Lab02/readme.md)
 ## Lab 05: app-conquerthenetwork
 Lab materials and prerecorded presentation for the Resilient Connected Client chapter.
 
-Get started via [Conquer the Network](./app-conquerthenetwork)
+Get started via [Conquer the Network](./Lab05/README.md)
 
 # [Getting started](#Instructions)
 Install all necessary software on your Windows PC or MacBook _before coming to the workshop_. The installation packages for Visual Studio and Xamarin are quite big so we strongly recommend installing them at home or at the office instead of using conference Wifi. In our experience, the [Xamarin University Setup Guides](https://university.xamarin.com/content/setupmenu) provide a very good and comprehensive set of instructions for getting ready for the Hands On Labs.
