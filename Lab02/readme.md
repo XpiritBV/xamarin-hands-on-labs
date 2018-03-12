@@ -27,7 +27,7 @@ We want our `MainPage` to look like this (iOS screenshot):
 
 1. First, set the `BindingContext` of this page to the `QuoteManager` singleton instance, so we can databind the controls in this page to the data. Open `MainPage.xaml.cs` and find the class constructor. Before the call to `InitializeComponent()`, add the following:
     ```csharp
-    BindingContext = QuoteManager.Instance;
+    BindingContext = Quotes.Data.QuoteManager.Instance;
     ```
 2. Replace the `StackLayout` with a `ListView`, making the `ListView` the root view of the `MainPage` content page. A `ListView` will automatically take up all the available space in its parent layout container by default.
 3. Bind the `ItemsSource` property to the `Quotes` collection of the `BindingContext` of this page
