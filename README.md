@@ -68,6 +68,14 @@ However! This can become quite tricky pretty fast. Here is some interesting back
 - Or read up on their article about [Async/Await tips and tricks](https://particular.net/blog/async-await-tips-and-tricks)
 - [Async and Await, All the Things Your Mother Never Told You](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Async-and-Await-All-the-Things-Your-Mother-Never-Told-You), a presentation by James Clancy from Xamarin
 
+### Backgrounding techniques
+As mentioned in our lecture about Mobile First Architecture, backgrounding techniques can be very helpful in retrieving and processing data without letting the user wait. Some articles that explain the different approaches:
+
+- [Xamarin docs: iOS backgrounding](https://developer.xamarin.com/guides/ios/application_fundamentals/backgrounding/)
+- [Xamarin docs: Android services](https://developer.xamarin.com/guides/android/application_fundamentals/services/)
+- [Backgrounding with Xamarin.Forms](https://www.youtube.com/watch?v=Z1YzyreS4-o) - Video Lecture by Rob Gibbens
+- [Microsoft docs: UWP background tasks](https://docs.microsoft.com/en-us/windows/uwp/launch-resume/support-your-app-with-background-tasks)
+
 ### Debug with the Xamarin Android Player from Visual Studio in VMWare or Parallels
 This [article by James Montemagno](https://montemagno.com/debug-with-the-xamarin-android-player-from-visual/) describes how you can setup debugging with a remote Android emulator running on your Mac, while working from Visual Studio in a virtual Windows image.
 
