@@ -1,40 +1,50 @@
 # xamarin-hands-on-labs
+
 Labs and samples for the Xamarin Hands-On-Labs workshop.
 
 Contents:
 
 ## Lab 01: "Hello World"
+
 Labs that let you create a new Xamarin.iOS or Xamarin.Android app from scratch, to get familiar with how Xamarin works.
 
 Get started via [Hello iOS](./Lab01/iOS/readme.md) or [Hello Android](./Lab01/Android/readme.md).
 
 ## Lab 02, 03, 04: "Quotes"
+
 3 Labs that lets you get familiar with Xamarin.Forms, adding behavior to your apps and adding native features to your apps.
 
 Get started via [Lab 02](./Lab02/readme.md)
 
 ## Lab 05: app-conquerthenetwork
+
 Lab materials and prerecorded presentation for the Resilient Connected Client chapter.
 
 Get started via [Conquer the Network](./Lab05/README.md)
 
 # [Getting started](#Instructions)
+
 Install all necessary software on your Windows PC or MacBook _before coming to the workshop_. The installation packages for Visual Studio and Xamarin are quite big so we strongly recommend installing them at home or at the office instead of using conference Wifi. In our experience, the [Xamarin University Setup Guides](https://university.xamarin.com/content/setupmenu) provide a very good and comprehensive set of instructions for getting ready for the Hands On Labs.
 
 ## Additional steps
+
 - Our samples use the Android Support Library v7, which require Android SDK API 26. Make sure you have this installed. From Visual Studio, go to _Tools > Android > SDK Manager_ and make sure **Android 8.0.0 (API 26)** > **SDK Platform** is installed.
 - To increase speed of your Android emulator, the [Visual Studio Emulator for Android](https://www.visualstudio.com/vs/msft-android-emulator/) is a good option; alternatively, installing the Hardware Accellerated Execution Manager (HAXM) enabled emulator from Google will also help: [HAXM driver](https://software.intel.com/en-us/articles/intel-hardware-accelerated-execution-manager-intel-haxm)
 
 Additionally, please clone this repo to your development laptop so you can follow along with our labs.
 
 ## Known issues / Troubleshooting
+
 Here are some known issues we ran into with students during previous runs of our Hands On Labs:
 
 ### Error message: **File path too long** while building or running exercises
+
 To avoid this error, please make sure to clone this repository into a directory that is close to the **C:\\** root (or other drive on your computer).
 
 ### Breakpoint not hitting shared code while debugging Android app
+
 This may be caused by tools not being installed or configured properly. Check the following:
+
 - Delete all Mono Shared Runtimes _from the Android emulator_: go into _Settings > Apps_ and delete all instances of **Mono Shared Runtime**; try restarting the debug session
 - Uninstall your app _from the Android emulator_: go into _Settings > Apps_ and delete your app; try debugging your app again
 - Check for non standard characters in your project/soluation path (try to use only letters, numbers and spaces)
@@ -42,6 +52,7 @@ This may be caused by tools not being installed or configured properly. Check th
 - In the Project Properties of your Android project, switch off _Optimize Code_ (under the _Build_ tab); rebuild the project and try debugging again
 
 ### Cannot connect to Mac from Visual Studio 2017
+
 If you cannot connect to your Mac build host because of the following error:
 
     One or more Xcode tools were not installed successfully. Failed tools: XcodeExtensionSupport.pkg, MobileDevice.pkg. Even if you can continue working with iOS apps, we strongly recommend you to manually open Xcode on ... and install them if asked.
@@ -49,10 +60,19 @@ If you cannot connect to your Mac build host because of the following error:
 Refer to [this article](https://developercommunity.visualstudio.com/content/problem/209704/vs-156-xcode-tools-installation-fails.html?childToView=211204#comment-211204) for a solution.
 
 ### More troubleshooting
+
 You can find more troubleshooting tips on the [Xamarin University website](https://university.xamarin.com/resources/troubleshooting).
 
 ## Extra links, tips & tricks
+
+### Recommended Xamarin plugins & components
+
+- [Xamarin.Essentials](https://docs.microsoft.com/en-us/xamarin/essentials/) - Official Xamarin component with abstractions for the most common device capabilities
+- [Xamarin Community Toolkit](https://github.com/xamarin/XamarinCommunityToolkit) - Community (open source) effects and Xamarin.Forms add ons
+- [Xamarin Plugins](https://xamarin.com/plugins) - Curated lists of the most popular Xamarin libraries
+
 ### Async & Await
+
 `Task` based programming with `async` & `await` is very prominent in mobile apps, since we need to be careful about not blocking the UI thread, which is responsible for drawing the screen and animations like scrolling. Any blocking operation, such as CPU intensive calculations or I/O (file or network) should be offloaded to background threads. `Async` & `await` has become very popular for doing this.
 
 However! This can become quite tricky pretty fast. Here is some interesting background material to read up on:
