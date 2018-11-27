@@ -16,26 +16,26 @@ namespace Quotes
             InitializeComponent();
         }
 
-		async void AddQuote(object sender, System.EventArgs e)
-		{
-			await Navigation.PushAsync(new EditQuotePage());
-		}
-
-		private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void AddQuote(object sender, System.EventArgs e)
         {
-			((ListView) sender).SelectedItem = null;
-			if (e.SelectedItem != null)
-			{
-				await Navigation.PushAsync(new QuoteDetailPage(e.SelectedItem as Quote));
-			}
+            await Navigation.PushAsync(new EditQuotePage());
         }
 
-		void OnDelete(object sender, System.EventArgs e)
-		{
-			if (sender is MenuItem item && item.CommandParameter is Quote quote)
-			{
-				QuoteManager.Instance.Quotes.Remove(quote);
-			}
-		}
-	}
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ((ListView)sender).SelectedItem = null;
+            if (e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new QuoteDetailPage(e.SelectedItem as Quote));
+            }
+        }
+
+        void OnDelete(object sender, System.EventArgs e)
+        {
+            if (sender is MenuItem item && item.CommandParameter is Quote quote)
+            {
+                QuoteManager.Instance.Quotes.Remove(quote);
+            }
+        }
+    }
 }

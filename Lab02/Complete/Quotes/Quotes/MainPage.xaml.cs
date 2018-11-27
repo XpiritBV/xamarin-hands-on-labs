@@ -18,11 +18,12 @@ namespace Quotes
 
         private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-			((ListView)sender).SelectedItem = null;
-			if (e.SelectedItem != null)
-			{
-				await Navigation.PushAsync(new QuoteDetailPage(e.SelectedItem as Quote));
-			}
+            ((ListView)sender).SelectedItem = null;
+            if (e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new QuoteDetailPage(e.SelectedItem as Quote));
+            }
         }
+
     }
 }

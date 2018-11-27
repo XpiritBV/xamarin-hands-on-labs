@@ -1,26 +1,32 @@
 ﻿using Quotes.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Quotes
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class QuoteDetailPage : ContentPage
-    {
-		public QuoteDetailPage() : this (new Quote()) { }
-
-		public QuoteDetailPage(Quote quote)
+	{
+        public QuoteDetailPage(Quote quote)
         {
             BindingContext = quote;
-			InitializeComponent();
+            InitializeComponent();
         }
 
-		async void EditQuote(object sender, System.EventArgs e)
-		{
-			await Navigation.PushAsync(new EditQuotePage(BindingContext as Quote));
-		}
+        async void EditQuote(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new EditQuotePage(BindingContext as Quote));
+        }
 
-		async void SayQuote(object sender, System.EventArgs e)
-		{
-			await QuoteManager.Instance.SayQuote(BindingContext as Quote);
-		}
-	}
+        async void SayQuote(object sender, System.EventArgs e)
+        {
+            await QuoteManager.Instance.SayQuote(BindingContext as Quote);
+        }
+    }
 }

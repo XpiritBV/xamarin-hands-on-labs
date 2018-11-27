@@ -416,10 +416,14 @@ For each of the platforms you want to explore, perform the steps below.
 ## Exercise 5: Using a Xamarin plugin
 In the previous exercise, we've explored how you can use abstraction via an interface and dependency injection to tap into native features. In this exercise, you will see that there are many plugins available on Nuget that provide access to native features in an abstract, cross platform manner.
 
-1. Install the `Xam.Plugins.TextToSpeech` plugin in all four projects.
+1. Install the `Xamarin.Essentials` plugin in all four projects (check `Include prerelease versions` for it to show up, as the plugin is still in preview).
     - You'll need the plugin in the shared `Quotes` project to get access to the abstract interface from shared code.
-    - Adding the `Xam.Plugins.TextToSpeech` to each platform project will make sure that the platform specific libraries containing the OS specific implementation are installed.
-2. Change the `SayQuote` method in the `QuoteManager` class to use the `CrossTextToSpeech.Current.Speak(...)` method. Note that this method is `async`, so it should be `await`ed. Therefore, we will also make `SayQuote` return a `Task` to make sure we are `async` all the way. _For more info, see the [tips on using `async` and `await`](https://github.com/XpiritBV/xamarin-hands-on-labs#async--await)_. It should look like this:
+    - Adding the `Xamarin.Essentials` to each platform project will make sure that the platform specific libraries containing the OS specific implementation are installed.
+2. Android requires a bit of extra setup. In the Android project's `MainLauncher` `Activity`, `Xamarin.Essentials` must be initialized in the `OnCreate` method. Add the following line, **just after** `base.OnCreate(savedInstanceState);`:
+    ```csharp
+    Xamarin.Essentials.Platform.Init(this, savedInstanceState); // add this line to your code
+	```
+3. Change the `SayQuote` method in the `QuoteManager` class to use the `CrossTextToSpeech.Current.Speak(...)` method. Note that this method is `async`, so it should be `await`ed. Therefore, we will also make `SayQuote` return a `Task` to make sure we are `async` all the way. _For more info, see the [tips on using `async` and `await`](https://github.com/XpiritBV/xamarin-hands-on-labs#async--await)_. It should look like this:
     ```csharp
     public async Task SayQuote(Quote quote)
     {
@@ -431,7 +435,7 @@ In the previous exercise, we've explored how you can use abstraction via an inte
         {
             text += "; by " + quote.Author;
         }
-        await CrossTextToSpeech.Current.Speak(text);
+		await TextToSpeech.SpeakAsync(text); // add using Xamarin.Essentials to the top of this C# file
     }
     ```
 3. Run the app. The Text-To-Speech feature should still work. Only now you can delete all the custom code we've created in the previous exercise :)
