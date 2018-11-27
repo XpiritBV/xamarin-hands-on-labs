@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using Plugin.TextToSpeech;
-using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace Quotes.Data
 {
@@ -17,6 +16,8 @@ namespace Quotes.Data
 
         public QuoteManager(IQuoteLoader loader)
         {
+            if (Instance != null)
+                throw new Exception("Can only create a single QuoteManager.");
             Instance = this;
             this.loader = loader;
             Quotes = new ObservableCollection<Quote>(loader.Load());
@@ -27,17 +28,17 @@ namespace Quotes.Data
             loader.Save(Quotes);
         }
 
-		public async Task SayQuote(Quote quote)
-		{
-			if (quote == null)
-				throw new ArgumentNullException(nameof(quote));
+        public async Task SayQuote(Quote quote)
+        {
+            if (quote == null)
+                throw new ArgumentNullException(nameof(quote));
 
-			string text = quote.QuoteText;
-			if (!string.IsNullOrWhiteSpace(quote.Author))
-			{
-				text += "; by " + quote.Author;
-			}
-			await CrossTextToSpeech.Current.Speak(text);
-		}
+            string text = quote.QuoteText;
+            if (!string.IsNullOrWhiteSpace(quote.Author))
+            {
+                text += "; by " + quote.Author;
+            }
+            await TextToSpeech.SpeakAsync(text); // add using Xamarin.Essentials to the top of this C# file
+        }
     }
 }
