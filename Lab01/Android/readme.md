@@ -1,60 +1,72 @@
 # Hello Android
+
 **Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
 
 ## Objectives
+
 - Build your first app with Xamarin.Android
 
 ## Instructions
+
 Create a new Android project in Visual Studio 2017: `File > New Project > Android > Blank App (Android)` or in Visual Studio for Mac: `File > New Solution > Android > Blank Android App`.
 
 ![New Android project](./images/android01.png)
 
-![Default Android project](./images/android02.png)
+Choose `Single View App` and accept the default target platform version.
+
+![Single View App](./images/android02.png)
+
+![Default Android Project](./images/android03.png)
 
 The default Android project template already contains a working app. Examine its contents.
+
 ### MainActivity.cs
+
 This is the root activity of the application, which starts up when the application launches.
 
 ```csharp
-[Activity(Label = "App1", MainLauncher = true)]
-public class MainActivity : Activity
+[Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+public class MainActivity : AppCompatActivity
 {
     protected override void OnCreate(Bundle savedInstanceState)
     {
         base.OnCreate(savedInstanceState);
-
         // Set our view from the "main" layout resource
-        SetContentView(Resource.Layout.Main);
+        SetContentView(Resource.Layout.activity_main);
     }
 }
 ```
 
 This **MainActivity** is marked with an attribute, indicating that it is the main launcher of the application.
 
-Note that the Activity calls **SetContentView** to associate a layout. This layout named **“Main”** can be found in the _Resources\layout_ project folder as an .axml file.
+Note that the Activity calls **SetContentView** to associate a layout. This layout named **“activity_main”** can be found in the _Resources\layout_ project folder as an `.axml` file.
 
-### Resources\layout\Main.axml
+### Resources\layout\activity_main.axml
+
 Double-click the file. The Android designer will show up.
 
-![Android designer](./images/android03.png)
+![Android designer](./images/android04.png)
 
-Clicking on the Source tab in the lower left corner will reveal the XML source.
+It shows the preview and the XML source side-by-side.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+</RelativeLayout>
 ```
 
-This main screen has a linear layout and contains no controls. In the **Designer** view, drag a button onto the surface from the **Toolbox**.
+This main screen has a relative layout and contains no controls. In the **Designer** view, drag a button onto the surface from the **Toolbox**.
 
-![Add button](./images/android04.png)
+![Add button](./images/android05.png)
 
 Notice in the properties pane that its **id** is `@+id/button1`. You can change this if you want, or just leave this as is.
 
 ### Interacting with controls
+
 Return to the `MainActivity.cs` source file. After the call to `SetContentView(...)`, in the `OnCreate` method, add:
 
 ```csharp
@@ -78,7 +90,8 @@ Run the app and click on the button to see how it works.
 ![Screenshot 1](./images/android05.png)
 
 ### Adding a list
-We are going to add a list to this application. Open the `Main.axml` layout and drag a `ListView` from the **Toolbox** to the surface just below the button.
+
+We are going to add a list to this application. Open the `activity_main.axml` layout. Remove the button and drag a `ListView` from the **Toolbox** to the surface just below the button.
 
 ![Add ListView](./images/android07.png)
 
@@ -102,7 +115,7 @@ A `ListView` gets its data from an `Adapter`. For more advanced scenario’s, yo
 In `MainActivity.cs`, replace the implementation of the `OnCreate` method with this:
 
 ```csharp
-private Data _data = new Data();
+private Data data = new Data();
 
 protected override void OnCreate(Bundle bundle)
 {
@@ -111,31 +124,24 @@ protected override void OnCreate(Bundle bundle)
     // Set our view from the "main" layout resource
     SetContentView(Resource.Layout.Main);
 
-    // Get our button from the layout resource,
-    // and attach an event to it
-    Button button = FindViewById<Button>(Resource.Id.button1);
+    var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1);
 
     var listView = FindViewById<ListView>(Resource.Id.listView1);
-
-    button.Click += delegate
-    {
-        var adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1);
-
-        adapter.AddAll(_data.Cities);
-        listView.Adapter = adapter;
-    };
+    adapter.AddAll(data.Cities);
+    listView.Adapter = adapter;
 }
 ```
 
-This code obtains a reference to the newly added `ListView`. In the `Click` handler for the button, an `ArrayAdapter` is created and bound to the `ListView`. Since this is a simple list containing only strings, the array is bound to the reserved `Android.Resource.Layout.SimpleListItem1` layout. This is a default item type in a ListView.
+This code obtains a reference to the newly added `ListView`. An `ArrayAdapter` is created and bound to the `ListView`. Since this is a simple list containing only strings, the array is bound to the reserved `Android.Resource.Layout.SimpleListItem1` layout. This is a default item type in a ListView.
 
 Note that the list of cities is copied into the adapter, and that the adapter is then bound to the `ListView` by setting its `Adapter` property.
 
-Now if we run the app, the list will be populated when the button is clicked.
+Now if we run the app, the list will be populated when it launches.
 
 ![List of cities](./images/android08.png)
 
 ### Adding navigation
+
 As a final step, we’re going to add navigation to the app. When we click on an item in the list, we will navigate to a new screen.
 
 To add a new screen, we need a new activity and a new layout. First, create the new layout. Add a new item to the project in the `Resources\layout` folder, of type `Android Layout`. Name it `CityView.axml`.
@@ -159,7 +165,7 @@ Add a **“Text (Large)”** view from the Toolbox to the layout, or copy the XM
 </LinearLayout>
 ```
 
-Add a new item to the project, of type `Android Activity`. Give it the name `CityActivity` and implement the `OnCreate` method like this:
+Add a new item to the project, of type `Activity`. Give it the name `CityActivity` and implement the `OnCreate` method like this:
 
 ```csharp
 [Activity(Label = "CityActivity")]
@@ -186,7 +192,7 @@ Note that it uses the newly created layout as its content view.
 
 Also note that it uses the `Intent.Extras` collection to obtain the name of the city that the user selected in the list and sets it to the `Text` property of the `TextView`.
 
-In this last part, we’re going to launch the new activity and pass the city name. On Android, starting a new activity is always done through an `Intent`. 
+In this last part, we’re going to launch the new activity and pass the city name. On Android, starting a new activity is always done through an `Intent`.
 
 The concept is that the user has an intent to perform a certain action. E.g.: send an email, show a map. Android could automatically select an activity that matches the intent, based on the user’s preferences, such as the default email app. In this way, the intent is decoupled from the actual activity that handles the intent.
 
@@ -214,7 +220,8 @@ This method creates a new `Intent`, specifying the type of the newly added `City
 
 `StartActivity` launches the activity, using the intent we just created. Run the app to see it work:
 
-![Detail View](./images/android09.png)
+![Detail View](./images/android09.gif)
 
-# Congratulations!
+## Congratulations!
+
 You've built your first Xamarin.Android app.
