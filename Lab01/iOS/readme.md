@@ -2,31 +2,27 @@
 **Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
 
 ## Objectives
-- Build your first app with Xamarin.Android
+- Build your first app with Xamarin.IOS
 
 ## Exercise 1: Basic navigation
 ### Instructions
-Create a new iOS/iPhone project in Visual Studio 2017: `File > New Project > iOS > Blank App (iPhone)` or in Visual Studio for Mac: `File > New Solution > iOS > Blank iOS App`.
+Create a new iOS/iPhone project in Visual Studio 2017: `File > New Project > iPhone & iPad > iOS App (Xamarin) and on the next screen Single view App` or in Visual Studio for Mac: `File > New Solution > iOS > Single View App`.
 
 ![New project](./images/ios01.png)
 
-Add iPhone Storyboard View Controller:
+Open the storyboard file Main.Storyboard. 
 
-![Add storyboard](./images/ios02.png)
+Change the view of the canvas to show the view as on the iPhone .
 
-Open the storyboard file. Add a new `ViewController` to the canvas by selecting the `ViewController` in the toolbox and dragging it onto the canvas.
+![Change view](./images/ios02.png)
 
-![Drag storyboard](./images/ios03.png)
+On the canvas you see A view Controller that contains a view.
 
-Change the view of the canvas to show the view as on the iPhone 6, 7 or 8 (depending on the SDK you have installed).
-
-![Change view](./images/ios04.png)
-
-From the toolbox add a `Button` to the `ViewController`.
+From the toolbox drag a `Button` to the `ViewController`and drop it there.
 
 ![Add button](./images/ios05.png)
 
-Change the `Title` property to “click me please”.
+Next change the `Title` property to “click me please”.
 
 ![Change button title](./images/ios06.png)
 
@@ -42,19 +38,9 @@ Give the `ViewController` a `Label` with text so we can see we are on a second p
 
 ![Storyboard](./images/ios09.png)
 
-Now select the button and hold the `CTRL` or `Command` key. Then drag from the button to the second `NavigationController`. When you release the mouse button, select the option for the `Action Segue` **“Modal”**. In `AppDelegate.cs`, make a code change where we add a `Window Property` like this:
+Now select the button and hold the `CTRL` or `Command` key. Then drag from the button to the second `ViewController`. When you release the mouse button, select the option for the `Action Segue` **“Show”**. 
 
-```csharp
-UIWindow _window;
-
-public override UIWindow Window
-{
-    get { return _window;}
-    set { _window = value; }
-}
-```
-
-And we **comment out** the method: `FinishLaunching`. Now go to the `info.plist` file and select our storyboard file as the startup. This will now wire up the storyboard as the main UI.
+Now check that in the Info.plist the main interface is selected to be Main
 
 ![Storyboard](./images/ios10.png)
 
@@ -62,7 +48,7 @@ Now build the solution and run it in the simulator. Now after we click the butto
 
 Go to the second page on the story board and add an additional `Button`.
 
-Now we need to add some code behind the click of the button. In order to make this work you need to first select the NavigationController, by clicking in the bottom dark bar in the storyboard designer for the `ViewController`:
+Now we need to add some code behind the click of the button. In order to make this work you need to first select the NavigationController, by clicking in the bottom dark bar in the storyboard designer for the 2nth `ViewController`:
 
 ![Storyboard](./images/ios11.png)
 
@@ -72,10 +58,13 @@ Now select the button again and also give it a name:
 
 ![Storyboard](./images/ios12.png)
 
- Now double click the button, since it now has a code behind, it will jump to the event handler for this button. There we add the following statement to dismiss the modal `ViewController`:
+ Now double click the button, since it now has a code behind, it will jump to the event handler for this button. There we add the following statement to dismiss the `ViewController`:
 
  ```csharp
-DismissModalViewController(true);
+    partial void BackButton_TouchUpInside(UIButton sender)
+    {
+        this.DismissViewController(true, null);
+    };
  ```
 
 Run the application and see you can now navigate between the two windows.
@@ -88,23 +77,15 @@ Select empty iOS application:
 
 ![New project](./images/ios21.png)
 
-Add a new storyboard to the project: 
+Open the Story Board Main.Storyboard and delete the exisiting viewcontroller so the storyboard is empty.
 
-![Add storyboard](./images/ios22.png)
-
-When you get a message to trust the template, click on the trust button, so the template can be used.
-![trust](./images/ios22a.png)
-
-
- Drag from the toolbox a new `Navigation Controller`. The storyboard looks like follows when done:
+Next you drag from the toolbox a new `Navigation Controller`. The storyboard looks like follows when done:
 
 ![Add navigation controller](./images/ios23.png)
 
-Make the same changes in the `AppDelegate` and the `info.plist` files so we can load up the storyboard, just as done in the first exercise.
-
 Test the project in the simulator and see if it runs. 
 
-By default we got as the startup screen the table view controller, so next is some code so we can fill the table with some data.
+By default we got as the startup screen the table view controller, so next we need to write some code to fill the table with some data.
 
 Select the `Table View Controller` and now go to the class properties and give it the name `CitiesTableViewController`, so we get a code behind class where we can code the initialization of the table.
 
@@ -172,6 +153,77 @@ public override void ViewDidLoad()
     this.TableView.Source = new CitiesTableViewSource();
 }
 ```
+Now build and run the application. If you implemented all without errors, your application should look as follows:
+
+![Running Application](./images/ios25.png)
+
+## Exercise 3: Navigation on selection
+### Instructions
+
+Now we want to implement that the moment we click on one of the cells, we navigate to a details page, that shows the name of the city.
+
+In the storyboard, first add a new ViewController. Give it the name CityDetailsViewController.
+
+We are going to load this page from code, therefore we need to provide an identifier to the view controller, so we can load it from the storyboard. For this you set the StoryBoardID.
+
+This should look as follows:
+![CityDetailsViewController](./images/ios30.png)
+
+On the CityDetailsViewController add a label, that we can set the moment the page loads. 
+
+Now goto the CityDetailsViewController.cs file and there add to the class a property that can be set, which contains the city name to display. We will set this name, after we load the viewController from the storyboard and in the load of the page we then set the text label to display the name of the property.
+
+The class should look like this:
+
+``` csharp
+public partial class CityDetailsViewController : UIViewController
+{
+    public string CityToDisplay { get; set; }
+    public CityDetailsViewController (IntPtr handle) : base (handle)
+    {
+    }
+
+    public override void ViewDidLoad()
+    {
+        txtCity.Text = CityToDisplay;
+    }
+}
+```
+Next we need to hook-up the touch handler in the cells. For this we can implement an override function `RowSelected`. YOu override this function in the CitiesTableViewSource we created in the previous excersise.
+
+In the handling of the selection of the cell, we then load from the Main.Storyboard file the Details View controller. Then we assign the propoerty of the details controller the selected value and we then display it. To display the new view controller we also need access to the TableViewController, that is displaying the row of cities. For this we change the constructor to accept a ViewController as input and we save it in a private field with the name `_parent`
+
+
+The next code will do the job:
+``` csharp
+//constructor:
+private UIViewController _parent;
+public CitiesTableViewSource(UIViewController parent)
+{
+    _citiesList.Add("New York");
+    _citiesList.Add("San Francisco");
+    _citiesList.Add("Redmond");
+    _citiesList.Add("Las Vegas");
+    _citiesList.Add("Chicago");
+    _citiesList.Add("Orlando");
+    _parent = parent;
+}
+//RowSelected override
+public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+{
+    var storyboard = UIStoryboard.FromName("Main", null);
+    var detailsViewController = storyboard.InstantiateViewController("CityDetails") as CityDetailsViewController;
+
+    detailsViewController.CityToDisplay = _citiesList[indexPath.Row];
+
+    _parent.ShowViewController(detailsViewController, this);
+}
+```
+the final change is the fix of calling the constructor of `CitiesTableViewSource` since it now requires a parent reference. Change the line to now pass in the `this` pointer. 
+
+Compile and run the application. If all went well, you should now be able to navigate when clicking a cell and because we use the navigationViewController, the back button is arranged automaticaly when we show the details viewcontroller.
+
+![FinalProduct](./images/ios32.png)
 
 # Congratulations!
 You've built your first Xamarin.iOS app.
