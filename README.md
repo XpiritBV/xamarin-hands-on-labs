@@ -24,7 +24,7 @@ Get started via [Conquer the Network](./Lab05/README.md)
 
 # [Getting started](#Instructions)
 
-Install all necessary software on your Windows PC or MacBook _before coming to the workshop_. The installation packages for Visual Studio and Xamarin are quite big so we strongly recommend installing them at home or at the office instead of using conference Wifi. In our experience, the [Xamarin University Setup Guides](https://university.xamarin.com/content/setupmenu) provide a very good and comprehensive set of instructions for getting ready for the Hands On Labs.
+Install all necessary software on your Windows PC or MacBook _before coming to the workshop_. The installation packages for Visual Studio and Xamarin are quite big so we strongly recommend installing them at home or at the office instead of using conference Wifi. In our experience, the [Microsoft Docs Setup Guides](https://docs.microsoft.com/en-us/xamarin/get-started/installation/) provide a very good and comprehensive set of instructions for getting ready for the Hands On Labs.
 
 ## Important to know!
 
@@ -73,7 +73,7 @@ You can find more troubleshooting tips on the [Xamarin University website](https
 
 - [Xamarin.Essentials](https://docs.microsoft.com/en-us/xamarin/essentials/) - Official Xamarin component with abstractions for the most common device capabilities
 - [Xamarin Community Toolkit](https://github.com/xamarin/XamarinCommunityToolkit) - Community (open source) effects and Xamarin.Forms add ons
-- [Xamarin Plugins](https://xamarin.com/plugins) - Curated lists of the most popular Xamarin libraries
+- [Xamarin Components](https://github.com/xamarin/XamarinComponents) - Curated lists of the most popular Xamarin libraries
 
 ### Async & Await
 
@@ -110,7 +110,7 @@ The [Forms Community Toolkit](https://github.com/FormsCommunityToolkit/FormsComm
 Here are some links to look at when it comes to storing secrets on your device:
 
 - [SQLCipher](https://www.zetetic.net/sqlcipher/) is a popular library that works on top of the SQLite database, which is available out-of-the-box on iOS and Android. Zetetic offers a [paid component for SQLCipher in Xamarin](https://www.zetetic.net/sqlcipher/sqlcipher-for-xamarin/). It encrypts the database using strong encryption algorithms.
-- The `Xamarin.Auth` library supports secure storage of credentials. It is described in [this article](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/general/store-credentials/). Under the hood, it uses the [Android KeyStore](https://developer.android.com/training/articles/keystore.html) and [iOS Keychain](https://developer.xamarin.com/samples/monotouch/Keychain/) API's. When it comes to storing private data, it pays to investigate the appropriate API's and storage locations in each platform before rolling your own solution. See [this guide for iOS](https://developer.xamarin.com/guides/ios/application_fundamentals/security-privacy-enhancements/).
+- The `Xamarin.Auth` library supports secure storage of credentials. It is described in [this article](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/General/store-credentials). Under the hood, it uses the [Android KeyStore](https://developer.android.com/training/articles/keystore.html) and [iOS Keychain](https://developer.xamarin.com/samples/monotouch/Keychain/) API's. When it comes to storing private data, it pays to investigate the appropriate API's and storage locations in each platform before rolling your own solution. See [this guide for iOS](https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/security-privacy).
 
 Two relevant presentations on the topic of security:
 
@@ -122,8 +122,8 @@ With `Xamarin.Forms`, questions about performance often pop up. As your UI becom
 
 - [Optimizing App Performance with Xamarin.Forms](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Optimizing-App-Performance-with-XamarinForms), a presentation by Jason Smith from Xamarin.
 - [Improving Xamarin.Forms Startup Performance](https://xamarinhelp.com/improving-xamarin-forms-startup-performance/)
-- [ListView Performance](https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/performance/)
-- A [breakdown of the improvements](https://blog.xamarin.com/glimpse-future-xamarin-forms-3-0/) we can expect in the upcoming Xamarin.Forms 3.0 release
+- [ListView Performance](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/performance)
+- A [breakdown of the improvements](https://blog.xamarin.com/glimpse-future-xamarin-forms-3-0/) in the Xamarin.Forms 3.0 release
 
 ### ESRI in Xamarin apps
 Some material about using ESRI ArcGIS mapping components in Xamarin apps:
