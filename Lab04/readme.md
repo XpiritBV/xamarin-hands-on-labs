@@ -27,7 +27,7 @@ In this exercise, you will explore how to customize the platform themes to chang
 ## Exercise 2: Creating an effect
 In this exercise, we will use an `Effect` to add a drop shadow to the quote label on the `QuoteDetailPage`. The end result should look like this:
 
-![Drop shadow effect](images/lab0301.png)
+![Drop shadow effect](images/lab0401.png)
 
 1. First, we will add the effect to our shared code. Add a new class named `ShadowEffect` to the `Quotes` project. The class should inherit from `RoutingEffect` (in the `Xamarin.Forms` namespace) and it should support properties like `Radius`, `Color`, `DistanceX` and `DistanceY`. It should look like this:
 
@@ -230,7 +230,69 @@ On UWP, adding a drop shadow is a bit more complex. You'll need access to the na
 
 Well done!
 
-## Exercise 4: Adding a speech engine
+## Exercise 4: Using the Material Visual
+
+In this exercise, we will leverage the `Visual` feature in Xamarin.Forms. We'll add the `Xamarin.Forms.Visual.Material` Nuget package and activate it in the app. But first we must make sure that the Android app uses target framework 9.0 (Pie).
+
+1. Open the properties of the Android project, and in the `Application` section, set the `Compile using Android version (Target Framework)` property to `Android 9.0 (Pie)`:
+
+![Setting the Target Framework](images/lab0402.png)
+
+Note: this will only use the 9.0 SDK used for _compiling_ the app. It will still run all the way back to `Android 5.0`, leveraging Google's `AppCompat` libraries.
+
+2. Add the `Xamarin.Forms.Visual.Material` Nuget package to all projects in the soluation.
+3. Initialize the Visual in the startup code of your apps:
+
+### Android
+Locate `MainActivity.cs`, and add `global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);` to the `OnCreate` method, immediately after the call to `Xamarin.Forms.Init`. The method should now look like this:
+
+```csharp
+protected override void OnCreate(Bundle savedInstanceState)
+{
+    TabLayoutResource = Resource.Layout.Tabbar;
+    ToolbarResource = Resource.Layout.Toolbar;
+
+    base.OnCreate(savedInstanceState);
+    Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+    global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+    global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
+    LoadApplication(new App());
+}
+```
+
+### iOS
+Locate `AppDelegate.cs` in your iOS application, and add `global::Xamarin.Forms.FormsMaterial.Init();` to the `FinishedLaunching` method, immediately after the call to `Xamarin.Forms.Init`. The method should now look like this:
+
+```csharp
+public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+{
+    global::Xamarin.Forms.Forms.Init();
+    global::Xamarin.Forms.FormsMaterial.Init();
+    LoadApplication(new App());
+
+    return base.FinishedLaunching(app, options);
+}
+```
+
+4. Use the `Material` visual in some of your XAML: open the `EditQuotePage.xaml` and add the following attribute to the root `ContentPage` element:
+
+```csharp
+<ContentPage Visual="Material" ...
+```
+
+All controls nested within this page will inherit the `Material` look from the page.
+5. Run the app and edit a quote. The controls should now have adopted the Material design look & feel:
+
+![Material Visual on Android](images/lab0403.png)
+
+The difference is even more dramatic on iOS:
+
+![Material Visual on iOS](images/lab0404.png)
+
+Great work, you've updated the design of your app!
+
+## Exercise 5: Adding a speech engine
+
 In this exercise, we will add a feature that speaks the quote text when you double tap it on the `QuoteDetail` page. Each platform has its own Text-To-Speech engine, but requires native code to use the API's. You will explore how to use dependency injection to tap into native functionality.
 
 1. Add an interface definition named `ITextToSpeech`, which contains a single method named `Speak`, receiving a `string` parameter representing the text to speak. It should look like this:
@@ -413,7 +475,8 @@ For each of the platforms you want to explore, perform the steps below.
     ```
 5. Run the app. The app should now read the quote aloud.
 
-## Exercise 5: Using a Xamarin plugin
+## Exercise 6: Using a Xamarin plugin
+
 In the previous exercise, we've explored how you can use abstraction via an interface and dependency injection to tap into native features. In this exercise, you will see that there are many plugins available on Nuget that provide access to native features in an abstract, cross platform manner.
 
 1. Install the `Xamarin.Essentials` plugin in all four projects (check `Include prerelease versions` for it to show up, as the plugin is still in preview).
