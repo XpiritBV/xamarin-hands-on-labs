@@ -4,8 +4,10 @@ In this lab, we will spice up our app a little bit by tapping into native featur
 **Prerequisites**: please make sure you have installed all necessary software. [Instructions](https://github.com/XpiritBV/xamarin-hands-on-labs/#getting-started).
 
 ## Objectives
+
 - Tweak the platform themes to customize look and feel
 - Add an effect to customize the quote label
+- Apply the Material Visual to change the look & feel of the EditQuote page
 - Add a speech engine to speak out the quotes
 
 ## Exercise 1: Platform themes
