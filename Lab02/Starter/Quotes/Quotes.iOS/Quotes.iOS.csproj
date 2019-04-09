@@ -150,12 +150,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.293080" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Quotes\Quotes.csproj">
-      <Project>{B0E379D2-87FC-4DE3-A644-E081FB13D56B}</Project>
+      <Project>{B20EC3ED-F9C4-4250-8282-B28697AFDB4D}</Project>
       <Name>Quotes</Name>
     </ProjectReference>
   </ItemGroup>
