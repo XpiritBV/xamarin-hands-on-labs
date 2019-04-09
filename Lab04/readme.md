@@ -27,7 +27,7 @@ In this exercise, you will explore how to customize the platform themes to chang
 ## Exercise 2: Creating an effect
 In this exercise, we will use an `Effect` to add a drop shadow to the quote label on the `QuoteDetailPage`. The end result should look like this:
 
-![Drop shadow effect](images/lab0301.png)
+![Drop shadow effect](images/lab0401.png)
 
 1. First, we will add the effect to our shared code. Add a new class named `ShadowEffect` to the `Quotes` project. The class should inherit from `RoutingEffect` (in the `Xamarin.Forms` namespace) and it should support properties like `Radius`, `Color`, `DistanceX` and `DistanceY`. It should look like this:
 
@@ -230,7 +230,13 @@ On UWP, adding a drop shadow is a bit more complex. You'll need access to the na
 
 Well done!
 
-## Exercise 4: Adding a speech engine
+## Exercise 4: Using the Material Visual
+
+In this exercise, we will leverage the `Visual` feature in Xamarin.Forms. We'll add the `Xamarin.Forms.Visual.Material` Nuget package and activate it in the app. But first we must make sure that the Android app uses target framework 9.0 (Pie).
+
+1. Open the properties of the Android project
+
+## Exercise 5: Adding a speech engine
 In this exercise, we will add a feature that speaks the quote text when you double tap it on the `QuoteDetail` page. Each platform has its own Text-To-Speech engine, but requires native code to use the API's. You will explore how to use dependency injection to tap into native functionality.
 
 1. Add an interface definition named `ITextToSpeech`, which contains a single method named `Speak`, receiving a `string` parameter representing the text to speak. It should look like this:
@@ -413,7 +419,7 @@ For each of the platforms you want to explore, perform the steps below.
     ```
 5. Run the app. The app should now read the quote aloud.
 
-## Exercise 5: Using a Xamarin plugin
+## Exercise 6: Using a Xamarin plugin
 In the previous exercise, we've explored how you can use abstraction via an interface and dependency injection to tap into native features. In this exercise, you will see that there are many plugins available on Nuget that provide access to native features in an abstract, cross platform manner.
 
 1. Install the `Xamarin.Essentials` plugin in all four projects (check `Include prerelease versions` for it to show up, as the plugin is still in preview).
