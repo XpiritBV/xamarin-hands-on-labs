@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="3.6.0.293080" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quotes\Quotes.csproj">
-      <Project>{B0E379D2-87FC-4DE3-A644-E081FB13D56B}</Project>
+      <Project>{B20EC3ED-F9C4-4250-8282-B28697AFDB4D}</Project>
       <Name>Quotes</Name>
     </ProjectReference>
   </ItemGroup>
