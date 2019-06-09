@@ -75,6 +75,10 @@ You can find more troubleshooting tips on the [Xamarin University website](https
 - [Xamarin Community Toolkit](https://github.com/xamarin/XamarinCommunityToolkit) - Community (open source) effects and Xamarin.Forms add ons
 - [Xamarin Components](https://github.com/xamarin/XamarinComponents) - Curated lists of the most popular Xamarin libraries
 
+### Xamarin.Forms
+
+- [Visual State Manager](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/visual-state-manager) - How to use the Xamarin.Forms Visual State Manager to change UI appearance based on state changes, such as device orientation
+
 ### Async & Await
 
 `Task` based programming with `async` & `await` is very prominent in mobile apps, since we need to be careful about not blocking the UI thread, which is responsible for drawing the screen and animations like scrolling. Any blocking operation, such as CPU intensive calculations or I/O (file or network) should be offloaded to background threads. `Async` & `await` has become very popular for doing this.
