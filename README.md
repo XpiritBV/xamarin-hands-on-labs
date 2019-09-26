@@ -95,6 +95,7 @@ However! This can become quite tricky pretty fast. Here is some interesting back
 - The creators of [NServiceBus](https://particular.net/nservicebus) have an interesting webinar on [Async/Await Best Practices](https://particular.net/webinars/async-await-best-practices) which is worth watching
 - Or read up on their article about [Async/Await tips and tricks](https://particular.net/blog/async-await-tips-and-tricks)
 - [Async and Await, All the Things Your Mother Never Told You](https://channel9.msdn.com/Events/Xamarin-Evolve/2016/Async-and-Await-All-the-Things-Your-Mother-Never-Told-You), a presentation by James Clancy from Xamarin
+- [Correcting Common Async & Await Mistakes](https://www.youtube.com/watch?v=J0mcYVxJEl0), a presentation by Brandon Minnick
 
 ### Backgrounding techniques
 As mentioned in our lecture about Mobile First Architecture, backgrounding techniques can be very helpful in retrieving and processing data without letting the user wait. Some articles that explain the different approaches:
