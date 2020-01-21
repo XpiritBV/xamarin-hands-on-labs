@@ -69,6 +69,16 @@ You can find more troubleshooting tips on the [Xamarin University website](https
 
 ## Extra links, tips & tricks
 
+### MVVM frameworks
+
+- [Prism](https://prismlibrary.com/)
+- [MvvmCross](https://www.mvvmcross.com/)
+- [MvvmLight](http://www.mvvmlight.net/)
+
+### Integrating AI
+
+- [Not Hotdog demo](https://github.com/roycornelissen/Xamarin-NotHotdog)
+
 ### Recommended Xamarin plugins & components
 
 - [Xamarin.Essentials](https://docs.microsoft.com/en-us/xamarin/essentials/) - Official Xamarin component with abstractions for the most common device capabilities
